@@ -1,0 +1,14 @@
+#this file specifies a collision-free initial position for our robot_model in specified ros2 structure (acessed in other urdf files)
+
+#NOTE: can be adapted when integrating this package into a whole scene
+
+#################################################################################################################################
+## copied from diy_robotarm_wer24_description package, cell_model.urdf.xacro refers to this file NOT to the dependency package ##
+#################################################################################################################################
+
+shoulder: 0
+upper_arm: 0
+forearm: 0
+wrist_1: 0
+wrist_2: 0
+wrist_3: 0

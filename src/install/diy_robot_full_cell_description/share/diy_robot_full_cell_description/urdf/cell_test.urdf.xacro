@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<!--this is the main urdf file called while launching and passed to the robot_state_publisher node-->
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="diy_robot_cell">
+
+    <xacro:arg name="tf_prefix" default=""/>
+<!--define world link, everything gets connected to-->
+    <link name="world"/>
+
+
+<!--include and setup the robot arm-->
+    <xacro:include filename="$(find diy_robotarm_wer24_description)/urdf/diy_robotarm_macro.urdf.xacro"/>
+
+    <!--joint_limits and initial positions can be confighred inside THIS ws-->
+    <xacro:arg name="joint_limit_params" default="$(find diy_robot_full_cell_description)/config/joint_limits.yaml"/>
+    <xacro:arg name="initial_positions_file" default="$(find diy_robot_full_cell_description)/config/initial_positions.yaml"/>
+    <xacro:property name="initial_positions_file" default="$(arg initial_positions_file)"/>
+
+    <!--kinematics config will NOT be acessable inside this ws, we refer to the installed dependencie ws-->
+    <xacro:arg name="kinematics_params" default="$(find diy_robotarm_wer24_description)/config/default_kinematics.yaml"/>
+
+    <xacro:arg name="arm_name" default="wer24_robotarm"/>
+    <xacro:arg name="robot_ip" default="0.0.0.0"/>
+    <xacro:arg name="use_fake_hardware" default="true"/>
+
+
+    <xacro:diy_robotarm
+            name="$(arg arm_name)"
+            tf_prefix="$(arg tf_prefix)"
+            parent="$(arg tf_prefix)subframe_link"
+            joint_limits_parameters_file="$(arg joint_limit_params)"
+            kinematics_parameters_file="$(arg kinematics_params)"
+            use_fake_hardware="$(arg use_fake_hardware)"
+            initial_positions="${xacro.load_yaml(initial_positions_file)}"
+            robot_ip="$(arg robot_ip)">
+        <origin xyz="0 0 0" rpy="0 0 0" />          
+    </xacro:diy_robotarm>
+
+
+</robot>    

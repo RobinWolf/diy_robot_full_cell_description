@@ -1,0 +1,80 @@
+# this file specifies physical joint limits for in a special ros2 structure (acessed in diy_robotarm_macro.xacro and ros2 control i.e. moveit)
+
+#NOTE: can be modified for the specific scene or task on user-properties, but look at the clearance of cabels!
+#NOTE: specifing the joint_limits clrrectly has mayor influence on motion planning (search avoid breaks spaces),
+#       self collisons doesn't need to be taken into account by specifying these paremeters
+
+#################################################################################################################################
+## copied from diy_robotarm_wer24_description package, cell_model.urdf.xacro refers to this file NOT to the dependency package ##
+#################################################################################################################################
+
+joint_limits:
+  shoulder:
+    # acceleration limits are not publicly available
+    has_acceleration_limits: false
+    has_effort_limits: true
+    has_position_limits: true
+    has_velocity_limits: true
+    max_position: !degrees  180.0
+    max_velocity: !degrees  60.0
+    min_position: !degrees -180.0
+    max_effort: 15  #in Nm
+
+  upper_arm:
+    # acceleration limits are not publicly available
+    has_acceleration_limits: false
+    has_effort_limits: true
+    has_position_limits: true
+    has_velocity_limits: true
+    max_position: !degrees  180.0
+    max_velocity: !degrees  60.0
+    min_position: !degrees -180.0
+    max_effort: 15
+
+
+  forearm:
+    # acceleration limits are not publicly available
+    has_acceleration_limits: false
+    has_effort_limits: true
+    has_position_limits: true
+    has_velocity_limits: true
+    max_position: !degrees  180.0
+    max_velocity: !degrees  60.0
+    min_position: !degrees -180.0
+    max_effort: 15
+
+
+  wrist_1:
+    # acceleration limits are not publicly available
+    has_acceleration_limits: false
+    has_effort_limits: true
+    has_position_limits: true
+    has_velocity_limits: true
+    max_position: !degrees  180.0
+    max_velocity: !degrees  60.0
+    min_position: !degrees -180.0
+    max_effort: 10
+
+
+  wrist_2:
+    # acceleration limits are not publicly available
+    has_acceleration_limits: false
+    has_effort_limits: true
+    has_position_limits: true
+    has_velocity_limits: true
+    max_position: !degrees  180.0
+    max_velocity: !degrees  60.0
+    min_position: !degrees -180.0
+    max_effort: 10
+
+  wrist_3:
+    # acceleration limits are not publicly available
+    has_acceleration_limits: false
+    has_effort_limits: true
+    has_position_limits: true
+    has_velocity_limits: true
+    max_position: !degrees  180.0
+    max_velocity: !degrees  60.0
+    min_position: !degrees -180.0
+    max_effort: 10
+

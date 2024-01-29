@@ -1,8 +1,11 @@
-/home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description//urdf/cell_main.urdf.xacro
 /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description//urdf/materials.urdf.xacro
+/home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description//urdf/test_arm.urdf.xacro
 /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description//urdf/subframe_macro.urdf.xacro
+/home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description//urdf/cell_model.urdf.xacro
 /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description//launch/visualize.launch.py
 /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description//rviz/rviz_config.rviz
+/home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description//config/joint_limits.yaml
+/home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description//config/initial_positions.yaml
 /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/ament_index/resource_index/package_run_dependencies/diy_robot_full_cell_description
 /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/ament_index/resource_index/parent_prefix_path/diy_robot_full_cell_description
 /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description/environment/ament_prefix_path.sh

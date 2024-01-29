@@ -48,6 +48,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/hephaestus/ros2_ws/src/diy_robot_full_cell_description/launch"
     "/home/hephaestus/ros2_ws/src/diy_robot_full_cell_description/meshes"
     "/home/hephaestus/ros2_ws/src/diy_robot_full_cell_description/rviz"
+    "/home/hephaestus/ros2_ws/src/diy_robot_full_cell_description/config"
     )
 endif()
 

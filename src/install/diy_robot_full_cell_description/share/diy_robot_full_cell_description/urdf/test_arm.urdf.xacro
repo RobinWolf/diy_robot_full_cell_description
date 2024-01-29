@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<!--this is the main urdf.xacro file which builds actually the robot model by calling the other macros-->
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="wer24_robotarm">
+<!-- set robot some gloabal arguments -->
+    <xacro:arg name="name" default="diy_cell"/>
+    <link name="world" />
+
+<!-- import and set up the robot model -->
+    <xacro:include filename="$(find diy_robotarm_wer24_description)/urdf/diy_robotarm_macro.urdf.xacro"/>
+
+    <!-- set parameters defined in diy_robotarm_macro.xacro -->
+    <xacro:arg name="tf_prefix" default=""/>
+    <xacro:arg name="joint_limit_params" default="$(find diy_robot_full_cell_description)/config/joint_limits.yaml"/>
+    <xacro:arg name="kinematics_params" default="$(find diy_robotarm_wer24_description)/config/default_kinematics.yaml"/>
+    <!-- ros2_control related parameters -->
+    <xacro:arg name="robot_ip" default="0.0.0.0" />
+    <!-- Simulation parameters -->
+    <xacro:arg name="use_fake_hardware" default="true" />
+    <!-- initial position for simulations from .yaml files (Fake Hardware, Gazebo, Ignition) -->
+    <xacro:arg name="initial_positions_file" default="$(find diy_robot_full_cell_description)/config/initial_positions.yaml"/>
+    <!-- convert to property to use substitution in function -->
+    <xacro:property name="initial_positions_file" default="$(arg initial_positions_file)"/>
+   
+
+    <xacro:diy_robotarm
+        name="$(arg name)"
+        tf_prefix="$(arg tf_prefix)"
+        parent="world"
+        joint_limits_parameters_file="$(arg joint_limit_params)"
+        kinematics_parameters_file="$(arg kinematics_params)"
+        use_fake_hardware="$(arg use_fake_hardware)"
+        initial_positions="${xacro.load_yaml(initial_positions_file)}"
+        robot_ip="$(arg robot_ip)"
+        >
+        <origin xyz="0 0 0" rpy="0 0 0" />          <!-- position robot relative to its parent -->
+    </xacro:diy_robotarm>
+
+
+<!--include and set up the gripper-->
+  
+
+
+</robot>
