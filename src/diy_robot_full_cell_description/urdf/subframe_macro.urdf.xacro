@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+
+<!--this file contains a simple geometry description of the subframe the robotarm is mounted on-->
+<!-- in this version we use a simple, flat disc under the robot to prevent colldiding with everything under base z = 0 -->
+
+<!-- in further versions you can pass a stl file in the meshes directory to specify your custom subframe-->
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+<!--include materials macro-->
+    <xacro:include filename="$(find diy_robot_full_cell_description)/urdf/materials.urdf.xacro"/>
+
+<!--specify parametes for building the simple_subframe (in m)-->
+    <xacro:property name="disc_height" value="0.05"/> 
+    <xacro:property name="disc_radius" value="0.5"/> 
+
+
+<!--call this macro in the main urdf.xacro to use a siple desk subframe-->
+    <xacro:macro name="simple_subframe" params="tf_prefix parent *origin">
+
+        <joint name="${tf_prefix}parentTOsubframe" type="fixed">
+            <xacro:insert_block name="origin"/>
+            <parent link="${parent}"/>
+            <child link="${tf_prefix}subframe_link"/>
+        </joint>
+
+        <link name="${tf_prefix}subframe_link">
+            <visual>
+                <origin xyz="0 0 ${disc_height/2}" rpy="0 0 0"/>    <!--set the origin to the bottom of the subframe = world -->
+                <geometry>
+                    <cylinder length="${disc_height/2}" radius="${disc_radius}"/>
+                </geometry>
+                <material name="blue"/>
+            </visual>
+            <collision>
+                <origin xyz="0 0 ${disc_height/2}" rpy="0 0 0"/>
+                <geometry>
+                    <cylinder length="${disc_height/2}" radius="${disc_radius}"/>
+                </geometry>
+            </collision>
+        </link>
+    </xacro:macro>
+
+<!--call this macro to use a custom subframe-->
+    <xacro:macro name="custom_subframe" params="tf_prefix parent *origin">
+
+        <joint name="${tf_prefix}subframe_joint" type="fixed">
+            <xacro:insert_block name="origin"/>
+            <parent link="${parent}"/>
+            <child link="${tf_prefix}subframe_link"/>
+        </joint>
+
+        <link name="${tf_prefix}subframe_link">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://diy_robot_full_cell_description/meshes/visual/subframe.stl" scale="0.001 0.001 0.001"/>
+                </geometry>
+                <material name="black"/>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://diy_robot_full_cell_description/meshes/collision/subframe.stl" scale="0.001 0.001 0.001"/>
+                </geometry>
+            </collision>
+        </link>
+
+    </xacro:macro>
+
+
+</robot>

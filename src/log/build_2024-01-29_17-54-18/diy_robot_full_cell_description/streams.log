@@ -1,0 +1,28 @@
+[0.115s] Invoking command in '/home/hephaestus/ros2_ws/src/build/diy_robot_full_cell_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/hephaestus/ros2_ws/src/build/diy_robot_full_cell_description -- -j8 -l8
+[0.201s] Invoked command in '/home/hephaestus/ros2_ws/src/build/diy_robot_full_cell_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/hephaestus/ros2_ws/src/build/diy_robot_full_cell_description -- -j8 -l8
+[0.268s] Invoking command in '/home/hephaestus/ros2_ws/src/build/diy_robot_full_cell_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/hephaestus/ros2_ws/src/build/diy_robot_full_cell_description
+[0.280s] -- Install configuration: ""
+[0.280s] -- Up-to-date: /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description//urdf
+[0.280s] -- Up-to-date: /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description//urdf/cell_main.urdf.xacro
+[0.281s] -- Up-to-date: /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description//urdf/materials.urdf.xacro
+[0.281s] -- Installing: /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description//urdf/subframe_macro.urdf.xacro
+[0.281s] -- Up-to-date: /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description//launch
+[0.281s] -- Up-to-date: /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description//launch/visualize.launch.py
+[0.282s] -- Up-to-date: /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description//meshes
+[0.282s] -- Up-to-date: /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description//rviz
+[0.282s] -- Up-to-date: /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/ament_index/resource_index/package_run_dependencies/diy_robot_full_cell_description
+[0.282s] -- Up-to-date: /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/ament_index/resource_index/parent_prefix_path/diy_robot_full_cell_description
+[0.282s] -- Up-to-date: /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description/environment/ament_prefix_path.sh
+[0.283s] -- Up-to-date: /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description/environment/ament_prefix_path.dsv
+[0.283s] -- Up-to-date: /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description/environment/path.sh
+[0.283s] -- Up-to-date: /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description/environment/path.dsv
+[0.283s] -- Up-to-date: /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description/local_setup.bash
+[0.283s] -- Up-to-date: /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description/local_setup.sh
+[0.283s] -- Up-to-date: /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description/local_setup.zsh
+[0.284s] -- Up-to-date: /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description/local_setup.dsv
+[0.284s] -- Up-to-date: /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description/package.dsv
+[0.284s] -- Up-to-date: /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/ament_index/resource_index/packages/diy_robot_full_cell_description
+[0.284s] -- Up-to-date: /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description/cmake/diy_robot_full_cell_descriptionConfig.cmake
+[0.285s] -- Up-to-date: /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description/cmake/diy_robot_full_cell_descriptionConfig-version.cmake
+[0.285s] -- Up-to-date: /home/hephaestus/ros2_ws/src/install/diy_robot_full_cell_description/share/diy_robot_full_cell_description/package.xml
+[0.286s] Invoked command in '/home/hephaestus/ros2_ws/src/build/diy_robot_full_cell_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/hephaestus/ros2_ws/src/build/diy_robot_full_cell_description

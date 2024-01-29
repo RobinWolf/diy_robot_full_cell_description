@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="diy_robot_cell">
+
+<!--include recommendet macros with dependend descriptions-->
+    <xacro:include filename="$(find diy_robot_full_cell_description)/urdf/subframe_macro.urdf.xacro"/>
+
+<!--set arguments passed to the table macro-->
+    <xacro:arg name="tf_prefix" default=""/>
+
+<!--call the table macro-->
+    <link name="world"/>
+    <xacro:simple_subframe tf_prefix="$(arg tf_prefix)" parent="world">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </xacro:simple_subframe>
+
+
+
+
+
+
+</robot>    

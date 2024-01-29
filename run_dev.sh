@@ -13,7 +13,7 @@ docker build \
   --build-arg ROS_DISTRO="$ROS_DISTRO" \
   --build-arg UID="$uid" \
   --build-arg GID="$gid" \
-  -f Dockerfile \
+  -f dev.Dockerfile \
   -t automaton-dev/ros-render:"$ROS_DISTRO" .
 
 ##############################################################################
