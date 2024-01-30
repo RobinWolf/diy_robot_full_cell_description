@@ -79,7 +79,7 @@ USER $USER
 ##############################################################################
 FROM diy_gripper as diy_cell
 
-# Clone the diy-soft-gripper-description package into its own workspace
+# Clone the diy-full-cell-description package into its own workspace
 RUN mkdir -p /home/$USER/dependencies/diy_robot_full_cell_description_ws/src
 RUN cd /home/$USER/dependencies/diy_robot_full_cell_description_ws/src && \
     git clone https://github.com/RobinWolf/diy_robot_full_cell_description.git
@@ -94,11 +94,13 @@ USER root
 RUN sed -i 's|exec "\$@"|source "/home/'"${USER}"'/dependencies/diy_robot_full_cell_description_ws/install/setup.bash"\n&|' /ros_entrypoint.sh
 USER $USER
 
+
 ##############################################################################
-##  3. stage: start rviz node WITHOUT robot-state publisher (deployment)    ##     
+##  5. stage: start rviz node WITHOUT robot-state publisher (deployment)    ##     
 ##############################################################################
 
-#ATTENTION: currently with state publisher and joint state publisher gui, will be deleted from launch file, because controller starts this node anyway 
+#ATTENTION: currently with state publisher and joint state publisher gui, will be deleted from launch file,
+#           because controller starts this node anyway 
 
 # Add a default command to start visualization of the gripper by default whrn buildung the container
 CMD ["ros2", "launch", "diy_robot_full_cell_description_ws", "visualize.launch.py"]

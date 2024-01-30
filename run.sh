@@ -15,22 +15,19 @@ docker build \
   --build-arg ROS_DISTRO="$ROS_DISTRO" \
   --build-arg UID="$uid" \
   --build-arg GID="$gid" \
-  -f dev.Dockerfile \
+  -f Dockerfile \
   -t automaton-dev/ros-render:"$ROS_DISTRO" .
 
 ##############################################################################
 ##                            Run the container                             ##
 ##############################################################################
 SRC_CONTAINER=/home/hephaestus/ros2_ws/src
-SRC_HOST="$(pwd)"/src                           #mounting src from host machine in development process
-docker run \
 
 docker run \
   --name robot_cell \
   --rm \
   -it \
   --net=host \
-  -v "$SRC_HOST":"$SRC_CONTAINER":rw \
   -e DISPLAY="$DISPLAY" \
   automaton-dev/ros-render:"$ROS_DISTRO"
 
