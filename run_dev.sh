@@ -9,7 +9,9 @@ gid=$(eval "id -g")
 
 #pass some arguments and settings to the dev.Dockerfile while building the image (dev.Dockerfile)
 #name of the image builded here: utomaton-dev/ros-render:"ROS-Distribution eg humble"
+#dont use cached data to clone up-to date repos all the time
 docker build \
+  --no-cache \
   --build-arg ROS_DISTRO="$ROS_DISTRO" \
   --build-arg UID="$uid" \
   --build-arg GID="$gid" \
