@@ -3,15 +3,21 @@
 <!--this is the main urdf file called while launching and passed to the robot_state_publisher node-->
 <robot xmlns:xacro="http://wiki.ros.org/xacro" name="wer24_robotarm">
 
-<!-- set robot some gloabal arguments -->
+<!-- set some gloabal arguments (define second order namespaces to avoid name collisions)-->
     <xacro:arg name="name" default="diy_cell"/>
+    <xacro:arg name="tf_prefix" default=""/>
+    <xacro:arg name="tf_prefix_sub" default="sub_"/>
+    <xacro:arg name="tf_prefix_arm" default="arm_"/>
+    <xacro:arg name="tf_prefix_grip" default="grip_"/>
+
+
     <link name="world" />
 
 
 <!-- import and setup the subframe-->
     <xacro:include filename="$(find diy_robot_full_cell_description)/urdf/subframe_macro.urdf.xacro"/>
     
-    <xacro:simple_subframe tf_prefix="(arg tf_prefix)" parent="world">
+    <xacro:simple_subframe tf_prefix="$(arg tf_prefix)$(arg tf_prefix_sub)" parent="world">
         <origin xyz="0 0 0" rpy="0 0 0"/>
     </xacro:simple_subframe>
 
@@ -20,7 +26,6 @@
     <xacro:include filename="$(find diy_robotarm_wer24_description)/urdf/diy_robotarm_macro.urdf.xacro"/>
 
     <!-- set parameters defined in diy_robotarm_macro.xacro -->
-    <xacro:arg name="tf_prefix" default=""/>
     <xacro:arg name="joint_limit_params" default="$(find diy_robot_full_cell_description)/config/joint_limits.yaml"/>
     <xacro:arg name="kinematics_params" default="$(find diy_robotarm_wer24_description)/config/default_kinematics.yaml"/>
     <!-- ros2_control related parameters -->
@@ -34,8 +39,8 @@
    
     <xacro:diy_robotarm
         name="$(arg name)"
-        tf_prefix="$(arg tf_prefix)"
-        parent="$(arg tf_prefix)subframe_link"
+        tf_prefix="$(arg tf_prefix)$(arg tf_prefix_arm)"
+        parent="$(arg tf_prefix)$(arg tf_prefix_sub)subframe_link"
         joint_limits_parameters_file="$(arg joint_limit_params)"
         kinematics_parameters_file="$(arg kinematics_params)"
         use_fake_hardware="$(arg use_fake_hardware)"
@@ -49,7 +54,7 @@
 <!-- import and setup the gripper-->
     <xacro:include filename="$(find diy_soft_gripper_description)/urdf/diy_gripper_macro.urdf.xacro"/>
     
-    <xacro:diy_soft_gripper tf_prefix="(arg tf_prefix)" parent="(arg tf_prefix)link_6">
+    <xacro:diy_soft_gripper tf_prefix="$(arg tf_prefix)$(arg tf_prefix_grip)" parent="$(arg tf_prefix)$(arg tf_prefix_arm)link_6">
         <origin xyz="0 0 0" rpy="0 0 0"/>
     </xacro:diy_soft_gripper>
 

@@ -43,6 +43,7 @@ def generate_launch_description():
     )
 
     robot_description = {"robot_description": ParameterValue(robot_description_content, value_type=str)} 
+    
 
     rviz_config_file = PathJoinSubstitution(
     [FindPackageShare(description_package), "rviz", "rviz_config.rviz"])

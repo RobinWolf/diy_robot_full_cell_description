@@ -63,8 +63,8 @@ FROM diy_robotarm as diy_gripper
 # Clone the diy-soft-gripper-description package into its own workspace
 RUN mkdir -p /home/$USER/dependencies/diy_soft_gripper_description_ws/src
 RUN cd /home/$USER/dependencies/diy_soft_gripper_description_ws/src && \
-    git clone https://github.com/RobinWolf/diy_soft_gripper_describtion.git
-
+    git clone https://github.com/RobinWolf/diy_soft_gripper_description.git
+    
 # Build the diy-gripper package
 RUN cd /home/$USER/dependencies/diy_soft_gripper_description_ws && \
     . /opt/ros/$ROS_DISTRO/setup.sh && \
