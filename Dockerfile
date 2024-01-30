@@ -90,9 +90,9 @@ RUN cd /home/$USER/dependencies/diy_robot_full_cell_description_ws && \
 RUN colcon build
 
 # Add built diy-gripper package to entrypoint by calling install/setup.bash
-#USER root
-#RUN sed -i 's|exec "\$@"|source "/home/'"${USER}"'/dependencies/diy_robot_full_cell_description_ws/install/setup.bash"\n&|' /ros_entrypoint.sh
-#USER $USER
+USER root
+RUN sed -i 's|exec "\$@"|source "/home/'"${USER}"'/dependencies/diy_robot_full_cell_description_ws/install/setup.bash"\n&|' /ros_entrypoint.sh
+USER $USER
 
 
 ##############################################################################
@@ -103,4 +103,4 @@ RUN colcon build
 #           because controller starts this node anyway 
 
 # Add a default command to start visualization of the gripper by default whrn buildung the container
-#CMD ["ros2", "launch", "diy_robot_full_cell_description_ws", "visualize.launch.py"]
+CMD ["ros2", "launch", "diy_robot_full_cell_description_ws", "visualize.launch.py"]
