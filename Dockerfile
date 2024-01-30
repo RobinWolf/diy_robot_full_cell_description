@@ -86,7 +86,7 @@ RUN cd /home/$USER/dependencies/diy_robot_full_cell_description_ws/src && \
     
 # Build the diy-gripper package
 RUN cd /home/$USER/dependencies/diy_robot_full_cell_description_ws && \
-    . /opt/ros/$ROS_DISTRO/setup.sh && \
+    . /opt/ros/$ROS_DISTRO/setup.sh  && \
     colcon build
 
 # Add built diy-gripper package to entrypoint by calling install/setup.bash
@@ -96,7 +96,7 @@ USER $USER
 
 
 ##############################################################################
-##  5. stage: start rviz node WITHOUT robot-state publisher (deployment)    ##     
+##   5. stage: start rviz node WITHOUT robot-state publisher (deployment)   ##     
 ##############################################################################
 
 #ATTENTION: currently with state publisher and joint state publisher gui, will be deleted from launch file,

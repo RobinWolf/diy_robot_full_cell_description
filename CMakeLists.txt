@@ -7,8 +7,8 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-find_package(diy_soft_gripper_description REQUIRED)
 find_package(diy_robotarm_wer24_description REQUIRED)
+find_package(diy_soft_gripper_description REQUIRED)
 find_package(xacro REQUIRED)
 
 if(BUILD_TESTING)
