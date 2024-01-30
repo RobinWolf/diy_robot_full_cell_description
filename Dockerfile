@@ -85,9 +85,9 @@ RUN cd /home/$USER/dependencies/diy_robot_full_cell_description_ws/src && \
     git clone https://github.com/RobinWolf/diy_robot_full_cell_description.git
     
 # Build the diy-gripper package
-#RUN cd /home/$USER/dependencies/diy_robot_full_cell_description_ws && \
-#    . /opt/ros/$ROS_DISTRO/setup.sh  && \
-  #  colcon build
+RUN cd /home/$USER/dependencies/diy_robot_full_cell_description_ws && \
+    . /opt/ros/$ROS_DISTRO/setup.sh  && \
+    colcon build
 
 # Add built diy-gripper package to entrypoint by calling install/setup.bash
 #USER root
