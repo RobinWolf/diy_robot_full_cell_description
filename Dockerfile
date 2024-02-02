@@ -85,14 +85,16 @@ RUN cd /home/$USER/dependencies/diy_robot_full_cell_description_ws/src && \
     git clone https://github.com/RobinWolf/diy_robot_full_cell_description.git
     
 # Build the diy-full cell description package
-#RUN cd /home/$USER/dependencies/diy_robot_full_cell_description_ws && \
- #   . /opt/ros/$ROS_DISTRO/setup.sh && \
-  #  colcon build
+RUN cd /home/$USER/dependencies/diy_robot_full_cell_description_ws && \
+   . /opt/ros/$ROS_DISTRO/setup.sh && \
+   . /home/$USER/dependencies/diy_robotarm_wer24_description_ws/install/setup.sh && \
+   . /home/$USER/dependencies/diy_soft_gripper_description_ws/install/setup.sh && \
+   colcon build
 
 # Add built diy-full cell description package to entrypoint by calling install/setup.bash
-#USER root
-#RUN sed -i 's|exec "\$@"|source "/home/'"${USER}"'/dependencies/diy_robot_full_cell_description_ws/install/setup.bash"\n&|' /ros_entrypoint.sh
-#USER $USER
+USER root
+RUN sed -i 's|exec "\$@"|source "/home/'"${USER}"'/dependencies/diy_robot_full_cell_description_ws/install/setup.bash"\n&|' /ros_entrypoint.sh
+USER $USER
 
 
 ##############################################################################
@@ -103,4 +105,4 @@ RUN cd /home/$USER/dependencies/diy_robot_full_cell_description_ws/src && \
 #           because controller starts this node anyway 
 
 # Add a default command to start visualization of the gripper by default whrn buildung the container
-#CMD ["ros2", "launch", "diy_robot_full_cell_description_ws", "visualize.launch.py"]
+CMD ["ros2", "launch", "diy_robot_full_cell_description", "visualize.launch.py"]
