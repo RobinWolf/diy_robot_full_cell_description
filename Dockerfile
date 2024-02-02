@@ -29,7 +29,7 @@ WORKDIR /home/$USER/ros2_ws
 
 
 ##############################################################################
-##       2. stage: clone the robotarm-description repo from github          ##
+##             2. stage: robotarm-description repo from github              ##
 ##############################################################################
 FROM base as diy_robotarm
 
@@ -54,7 +54,7 @@ RUN sed -i 's|exec "\$@"|source "/home/'"${USER}"'/dependencies/diy_robotarm_wer
 USER $USER
 
 ##############################################################################
-##       3. stage: clone the gripper-description repo from github           ##
+##             3. stage: gripper-description repo from github               ##
 ##############################################################################
 FROM diy_robotarm as diy_gripper
 
@@ -75,7 +75,7 @@ USER $USER
 
 
 ##############################################################################
-##          4. stage: clone the cell-description repo from github           ##
+##               4. stage: cell-description repo from github                ##
 ##############################################################################
 FROM diy_gripper as diy_cell
 
@@ -84,23 +84,23 @@ RUN mkdir -p /home/$USER/dependencies/diy_robot_full_cell_description_ws/src
 RUN cd /home/$USER/dependencies/diy_robot_full_cell_description_ws/src && \
     git clone https://github.com/RobinWolf/diy_robot_full_cell_description.git
     
-# Build the diy-gripper package
-RUN cd /home/$USER/dependencies/diy_robot_full_cell_description_ws && \
-    . /opt/ros/$ROS_DISTRO/setup.sh && \
-    colcon build
+# Build the diy-full cell description package
+#RUN cd /home/$USER/dependencies/diy_robot_full_cell_description_ws && \
+ #   . /opt/ros/$ROS_DISTRO/setup.sh && \
+  #  colcon build
 
-# Add built diy-gripper package to entrypoint by calling install/setup.bash
-USER root
-RUN sed -i 's|exec "\$@"|source "/home/'"${USER}"'/dependencies/diy_robot_full_cell_description_ws/install/setup.bash"\n&|' /ros_entrypoint.sh
-USER $USER
+# Add built diy-full cell description package to entrypoint by calling install/setup.bash
+#USER root
+#RUN sed -i 's|exec "\$@"|source "/home/'"${USER}"'/dependencies/diy_robot_full_cell_description_ws/install/setup.bash"\n&|' /ros_entrypoint.sh
+#USER $USER
 
 
 ##############################################################################
 ##   5. stage: start rviz node WITHOUT robot-state publisher (deployment)   ##     
 ##############################################################################
 
-#ATTENTION: currently with state publisher and joint state publisher gui, will be deleted from launch file,
+#ATTENTION: currently WITH state publisher and joint state publisher gui, will be deleted from launch file,
 #           because controller starts this node anyway 
 
 # Add a default command to start visualization of the gripper by default whrn buildung the container
-CMD ["ros2", "launch", "diy_robot_full_cell_description_ws", "visualize.launch.py"]
+#CMD ["ros2", "launch", "diy_robot_full_cell_description_ws", "visualize.launch.py"]
