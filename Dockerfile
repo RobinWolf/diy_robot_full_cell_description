@@ -105,4 +105,4 @@ USER $USER
 #           because controller starts this node anyway 
 
 # Add a default command to start visualization of the gripper by default whrn buildung the container
-#CMD ["ros2", "launch", "diy_robot_full_cell_description", "visualize.launch.py"]
+CMD ["ros2", "launch", "diy_robot_full_cell_description", "visualize.launch.py"]
