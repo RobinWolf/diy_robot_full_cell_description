@@ -33,7 +33,7 @@
                 <material name="${tf_prefix}blue"/>
             </visual>
             <collision>
-                <origin xyz="0 0 ${disc_height/2}" rpy="0 0 0"/>
+                <origin xyz="0 0 ${-disc_height/2}" rpy="0 0 0"/>
                 <geometry>
                     <cylinder length="${disc_height/2}" radius="${disc_radius}"/>
                 </geometry>
