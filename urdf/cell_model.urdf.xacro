@@ -29,11 +29,10 @@
     <xacro:arg name="joint_limit_params" default="$(find diy_robot_full_cell_description)/config/joint_limits.yaml"/>
     <xacro:arg name="kinematics_params" default="$(find diy_robotarm_wer24_description)/config/default_kinematics.yaml"/>
     <!-- ros2_control related parameters -->
-    <xacro:arg name="robot_ip" default="0.0.0.0" />
-    <xacro:arg name="robot_ssid" default="0.0.0.0" />
-
+    <xacro:arg name="robot_ip" default="192.168.212.203" />
+    <xacro:arg name="robot_ssid" default="DIY-Robotics" />
     <!-- Simulation parameters -->
-    <xacro:arg name="use_fake_hardware" default="true" />
+    <xacro:arg name="use_fake_hardware" default="false" />
     <!-- initial position for simulations from .yaml files (Fake Hardware) -->
     <xacro:arg name="initial_positions_file" default="$(find diy_robot_full_cell_description)/config/initial_positions.yaml"/>
     <!-- convert to property to use substitution in function -->
