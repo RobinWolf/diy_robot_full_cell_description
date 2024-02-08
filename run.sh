@@ -16,7 +16,7 @@ docker build \
   --build-arg UID="$uid" \
   --build-arg GID="$gid" \
   -f Dockerfile \
-  -t diy-full-description-dev/ros-render:"$ROS_DISTRO" .
+  -t diy-full-description/ros-render:"$ROS_DISTRO" .
 
 ##############################################################################
 ##                            Run the container                             ##
@@ -29,6 +29,6 @@ docker run \
   -it \
   --net=host \
   -e DISPLAY="$DISPLAY" \
-  diy-full-description-dev/ros-render:"$ROS_DISTRO"
+  diy-full-description/ros-render:"$ROS_DISTRO"
 
 # display and network access is already passed to the container
