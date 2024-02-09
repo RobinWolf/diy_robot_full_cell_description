@@ -19,21 +19,21 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument(
             "tf_prefix_sub",
-            default_value='"_sub"',
+            default_value='"sub_"',
             description="Prefix for the subframe of the cell, should be unique to avoid namespace collisions",
         )
     )
     declared_arguments.append(
         DeclareLaunchArgument(
             "tf_prefix_arm",
-            default_value='"_arm"',
+            default_value='"arm_"',
             description="Prefix for the robotarm inside the cell, should be unique to avoid namespace collisions",
         )
     )
     declared_arguments.append(
         DeclareLaunchArgument(
             "tf_prefix_grip",
-            default_value='"_grip"',
+            default_value='"grip_"',
             description="Prefix for the gripper inside the cell, should be unique to avoid namespace collisions",
         )
     )
