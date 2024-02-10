@@ -73,7 +73,6 @@ USER root
 RUN sed -i 's|exec "\$@"|source "/home/'"${USER}"'/dependencies/diy_soft_gripper_description_ws/install/setup.bash"\n&|' /ros_entrypoint.sh
 USER $USER
 
-
 ##############################################################################
 ##               4. stage: cell-description repo from github                ##
 ##############################################################################
@@ -95,7 +94,6 @@ RUN cd /home/$USER/dependencies/diy_robot_full_cell_description_ws && \
 USER root
 RUN sed -i 's|exec "\$@"|source "/home/'"${USER}"'/dependencies/diy_robot_full_cell_description_ws/install/setup.bash"\n&|' /ros_entrypoint.sh
 USER $USER
-
 
 ##############################################################################
 ##   5. stage: start rviz node WITHOUT robot-state publisher (deployment)   ##     
