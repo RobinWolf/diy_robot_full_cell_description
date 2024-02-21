@@ -46,7 +46,7 @@ The whole scene was build up from the parts subframe, arm and gripper. To aviod 
 
 To connect the different macros you just have to set the "parents" parameter right (see red highlited font). In our case we linked the subframe to the world, the arm base to the subframe and the gripper base to link6/ flange of the arm.
 
-We kept the geometry of the subframe very simple. We defined a subframe geometry that the robot can't reach regions below Z-world = 0, because in that case the real subframe geometry doesn't matters. You just can bolt the robot on a wooden plate or something else flat. But feel free to adapt our subframe geometry to yours by changing the ````/nmeshes/placeholder.stl````with your CAD-model.
+We kept the geometry of the subframe very simple. We defined a subframe geometry that the robot can't reach regions below Z-world = 0, because in that case the real subframe geometry doesn't matters. You just can bolt the robot on a wooden plate or something else flat. But feel free to adapt our subframe geometry to yours by changing the ````/meshes/placeholder.stl````with your CAD-model.
 
 
 
