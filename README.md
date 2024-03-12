@@ -12,7 +12,7 @@ To run the package, you just have to source the run.sh script file. The containe
 
 The main idea is, that this repo can be cloned inside a docker-container containing and combining all packages for operationg the Robot (e.g. description, drivers, moveit2, applivation) Using differnet docker containers is very likely, because this makes the whole integration very modular.
 
-Refer to the main Readme.md https://github.com/mathias31415/diy_robotics/blob/main/ROS-Packages/ROS-OVERVIEW.md for a general overview.
+Refer to the main Readme.md [https://github.com/mathias31415/diy_robotics/blob/main/ROS-Packages/ROS-OVERVIEW.md](https://github.com/mathias31415/diy_robotics/blob/main/ROS-Packages/README.md) for a general overview.
 
 ![cell_classification](images/cell_classification.png)
 
