@@ -1,4 +1,4 @@
-# diy_robot_ful_cell_description
+# diy_robot_full_cell_description
 
 
 ## thematical Classification
